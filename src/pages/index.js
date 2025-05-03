@@ -9,7 +9,7 @@ export default function Home() {
         padding: '20px'
       }}>
         <div className={styles.hubContainer}>
-        <h1 className={styles.title}>Mes p'tits Jeux</h1>
+        <h1 className={styles.title}>MyGamesHub</h1>
         <div className={styles.gamesGrid}>
             <GameCard 
             title="Morpion" 

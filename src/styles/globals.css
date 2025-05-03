@@ -1,3 +1,13 @@
-body {
+  
+  body {
     background: linear-gradient(to right, #ffffff,#a7c2ee);
+
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* ← clé pour éviter les scrolls horizontaux */
+  }
+  
+  #__next {
+    display: flex;
+    justify-content: center;
   }
