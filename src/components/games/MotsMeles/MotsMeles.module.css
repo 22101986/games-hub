@@ -3,12 +3,8 @@
     margin: 0 auto;
     padding: 20px;
     font-family: 'Poppins', sans-serif;
-  }
-  
-  /* h1, h2 {
     text-align: center;
-    color: #2d3436;
-  } */
+  }
   
   .gameArea {
     display: flex;
@@ -16,10 +12,11 @@
     gap: 30px;
     justify-content: center;
     margin-top: 20px;
+    
   }
   
   .gridContainer {
-    background: #f8f9fa;
+    background: #6a67ce;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);

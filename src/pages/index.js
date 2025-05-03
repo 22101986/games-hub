@@ -1,42 +1,48 @@
-// pages/index.js
 import Link from 'next/link';
 import styles from '../styles/Games.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.hubContainer}>
-      <h1 className={styles.title}>Hub de Jeux</h1>
-      <div className={styles.gamesGrid}>
-        <GameCard 
-          title="Morpion" 
-          description="Le classique jeu de X et O"
-          href="/games/morpion"
-          bgColor="#265520"
-          emoji="❌🟢"
-        />
-        <GameCard 
-          title="Sudoku" 
-          description="Puzzle de chiffres japonais"
-          href="/games/sudoku"
-          bgColor="#f6d365"
-          emoji="🔢"
-        />
-        <GameCard 
-          title="Mots Mêlés" 
-          description="Trouvez les mots cachés"
-          href="/games/mots-meles"
-          bgColor="#6a67ce"
-          emoji="🔍"
-        />
-        <GameCard 
-          title="2048" 
-          description="Fusionnez les tuiles pour gagner"
-          href="/games/2048"
-          bgColor="#ff6f61"
-          emoji="🧩"
-        />
-      </div>
-    </div>
+    <div style={{
+        background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+        minHeight: '100vh',
+        padding: '20px'
+      }}>
+        <div className={styles.hubContainer}>
+        <h1 className={styles.title}>Mes p'tits Jeux</h1>
+        <div className={styles.gamesGrid}>
+            <GameCard 
+            title="Morpion" 
+            description="Le classique jeu de X et O"
+            href="/games/morpion"
+            bgColor="#265520"
+            emoji="❌🟢"
+            />
+            <GameCard 
+            title="Sudoku" 
+            description="Puzzle de chiffres japonais"
+            href="/games/sudoku"
+            bgColor="#f6d365"
+            emoji="🔢"
+            />
+            <GameCard 
+            title="Mots Mêlés" 
+            description="Trouvez les mots cachés"
+            href="/games/mots-meles"
+            bgColor="#6a67ce"
+            emoji="🔍"
+            />
+            <GameCard 
+            title="2048" 
+            description="Fusionnez les tuiles pour gagner"
+            href="/games/2048"
+            bgColor="#ff6f61"
+            emoji="🧩"
+            />
+        </div>
+        </div>
+        </div>
+    
   );
 }
 

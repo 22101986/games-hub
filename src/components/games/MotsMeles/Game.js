@@ -22,7 +22,7 @@ export default function MotsMelesGame() {
   const [grid, setGrid] = useState([]);
   const [foundWords, setFoundWords] = useState([]);
   const [selectedCells, setSelectedCells] = useState([]);
-  const [gridSize, setGridSize] = useState(15);
+  const [gridSize, setGridSize] = useState(12);
   const [difficulty, setDifficulty] = useState('medium');
   const [isLoading, setIsLoading] = useState(false);
   const [wordPositions, setWordPositions] = useState({});
@@ -187,8 +187,8 @@ export default function MotsMelesGame() {
 
   return (
     <div className={styles.app}>
-      <h1>Mots Mêlés</h1>
-      <h2>Thème: {theme.toUpperCase()}</h2>
+      <h1 className='title'>Mots Mêlés</h1>
+      <h2 className='title'>Thème: {theme.toUpperCase()}</h2>
       
       <Controls 
         gridSize={gridSize}
