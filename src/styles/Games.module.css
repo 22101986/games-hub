@@ -82,3 +82,41 @@
   .backButton:hover {
     background: #636e72;
   }
+
+  @media (max-width: 500px) {
+    .hubContainer {
+      padding: 1rem;
+    }
+  
+    .title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  
+    .gameCard {
+      height: auto;
+      padding: 1.5rem;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .gameCard h2 {
+      font-size: 1.4rem;
+    }
+  
+    .gameCard p {
+      font-size: 1rem;
+    }
+  
+    .emoji {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .gamesGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  

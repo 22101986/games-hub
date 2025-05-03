@@ -10,7 +10,7 @@
   
   .gameHeader {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 20px;
   }
@@ -90,14 +90,16 @@
   }
   
   .gridCell {
-    width: 100px;
-    height: 100px;
+    width: 18vw;
+  height: 18vw;
+  max-width: 80px;
+  max-height: 80px;
+  font-size: 5vw;
     margin-right: 15px;
     border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 45px;
     font-weight: bold;
     color: #fff;
     background: #eee;
@@ -163,7 +165,7 @@
   }
   
   /* Responsive */
-  @media (max-width: 600px) {
+  @media (max-width: 550px) {
     .gameHeader h1 {
       font-size: 50px;
     }

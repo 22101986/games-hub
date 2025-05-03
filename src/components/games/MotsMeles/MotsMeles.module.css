@@ -154,3 +154,45 @@
       columns: 1;
     }
   }
+
+  @media (max-width: 550px) {
+    .app {
+      padding: 10px;
+    }
+  
+    .gridContainer {
+      padding: 10px;
+    }
+  
+    .cell {
+      font-size: 14px;
+    }
+  
+    .wordList {
+      min-width: auto;
+      width: 100%;
+    }
+  
+    .wordList ul {
+      columns: 1;
+    }
+  
+    .controls {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .controlGroup {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .controls button, .controls select {
+      width: 100%;
+    }
+  
+    .themeSelector {
+      flex-direction: column;
+    }
+  }
+  
