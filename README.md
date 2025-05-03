@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Games Hub
 
-## Getting Started
+Welcome to **Games Hub**, a fun and interactive platform built with **React**, **Next.js**, and **JavaScript**. It features several classic games such as **Tic-Tac-Toe**, **Sudoku**, **Word Search**, and **2048**. This project aims to provide an enjoyable gaming experience while experimenting with modern web development technologies.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Tic-Tac-Toe**: A simple 3x3 grid game for two players.
+- **Sudoku**: Solve a 9x9 Sudoku puzzle.
+- **Word Search**: Find hidden words in a grid.
+- **2048**: A sliding puzzle game to combine tiles and reach the 2048 tile.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **React**: A JavaScript library for building user interfaces.
+- **Next.js**: A React framework for building SSR (Server-Side Rendered) applications.
+- **CSS**: Styling is done using modern CSS techniques, ensuring responsiveness and interactivity.
+- **JavaScript**: Core logic for the games and interactive elements.
