@@ -9,10 +9,7 @@ export default function Game2048() {
   const [gameOver, setGameOver] = useState(false);
   const [won, setWon] = useState(false);
   const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useState(() => {
-    const savedScore = localStorage.getItem('2048_bestScore');
-    return savedScore ? parseInt(savedScore, 10) : 0;
-  });
+  const [bestScore, setBestScore] = useState(0);
   const [isMoving, setIsMoving] = useState(false);
   const touchStart = useRef({ x: 0, y: 0 });
 
@@ -218,6 +215,21 @@ export default function Game2048() {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [handleKeyDown]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const savedScore = localStorage.getItem('2048_bestScore');
+      if (savedScore) {
+        setBestScore(parseInt(savedScore, 10));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('2048_bestScore', bestScore.toString());
+    }
+  }, [bestScore]);
 
   return (
     <div className={styles.gameContainer}>

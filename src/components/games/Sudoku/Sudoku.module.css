@@ -1,161 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-  color: #2d3436;
-}
-
-.App {
-  text-align: center;
-  max-width: 700px;
-  margin: auto;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  margin-top: 40px;
-}
-
-h1 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  color: #e17055;
-  text-shadow: 1px 1px #fff;
-}
-
-.sudoku-board {
-  display: inline-block;
-  border: 4px solid #2d3436;
-  border-radius: 12px;
-  overflow: hidden;
-  margin: 20px auto;
-  background-color: #fff;
-}
-
-.sudoku-row {
-  display: flex;
-}
-
-.sudoku-cell {
-  width: 60px;
-  height: 60px;
-  border: 1px solid #b2bec3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  cursor: pointer;
-  background-color: #fefefe;
-  transition: background 0.2s, transform 0.1s;
-  user-select: none;
-}
-
-.sudoku-cell:hover {
-  background-color: #ffeaa7;
-  transform: scale(1.05);
-}
-
-.sudoku-cell.fixed {
-  background-color: #dfe6e9;
-  font-weight: bold;
-  color: #2d3436;
-}
-
-.sudoku-cell.selected {
-  background-color: #74b9ff;
-  color: #fff;
-  font-weight: bold;
-}
-
-.thick-bottom {
-  border-bottom: 3px solid #2d3436;
-}
-
-.thick-right {
-  border-right: 3px solid #2d3436;
-}
-
-.number-pad {
-  margin: 20px 0;
-}
-
-.number-pad button {
-  width: 50px;
-  height: 50px;
-  margin: 6px;
-  font-size: 20px;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  background-color: #fd79a8;
-  color: #fff;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.number-pad button:hover {
-  background-color: #e84393;
-  transform: scale(1.1);
-}
-
-.check-button {
-  padding: 12px 24px;
-  font-size: 16px;
-  background-color: #00b894;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.check-button:hover {
-  background-color: #00cec9;
-  transform: scale(1.05);
-}
-
-.difficulty-selector {
-  margin: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.difficulty-selector label {
-  font-weight: 500;
-}
-
-.difficulty-selector select,
-.difficulty-selector button {
-  padding: 8px 12px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fab1a0;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.difficulty-selector button:hover {
-  background-color: #ff7675;
-}
-
-.win-message {
-  margin-top: 20px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #00b894;
-  animation: fadeIn 0.8s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+.sudokuContainer {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-top: 40px;
+  }
+  
+  .sudokuBoard {
+    display: inline-block;
+    border: 4px solid #2d3436;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px auto;
+    background-color: #fff;
+  }
+  
+  .sudokuRow {
+    display: flex;
+  }
+  
+  .sudokuCell {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #b2bec3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    background-color: #fefefe;
+    transition: background 0.2s, transform 0.1s;
+    user-select: none;
+  }
+  
+  .sudokuCell:hover {
+    background-color: #ffeaa7;
+    transform: scale(1.05);
+  }
+  
+  .fixed {
+    background-color: #dfe6e9;
+    font-weight: bold;
+    color: #2d3436;
+  }
+  
+  .selected {
+    background-color: #74b9ff;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .thickBottom {
+    border-bottom: 3px solid #2d3436;
+  }
+  
+  .thickRight {
+    border-right: 3px solid #2d3436;
+  }
+  
+  .numberPad {
+    margin: 20px 0;
+  }
+  
+  .numberPad button {
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #fd79a8;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .numberPad button:hover {
+    background-color: #e84393;
+    transform: scale(1.1);
+  }
+  
+  .checkButton {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #00b894;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .checkButton:hover {
+    background-color: #00cec9;
+    transform: scale(1.05);
+  }
+  
+  .difficultySelector {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .difficultySelector label {
+    font-weight: 500;
+  }
+  
+  .difficultySelector select,
+  .difficultySelector button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fab1a0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .difficultySelector button:hover {
+    background-color: #ff7675;
+  }
+  
+  .winMessage {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #00b894;
+    animation: fadeIn 0.8s ease;
+  }
+  

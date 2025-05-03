@@ -1,15 +1,4 @@
-/* Global styles */
-body {
-    font-family: 'Comic Neue', 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  /* Container */
-  .game-container {
+.gameContainer {
     max-width: 500px;
     width: 100%;
     margin: 0 auto;
@@ -19,15 +8,14 @@ body {
     padding: 20px;
   }
   
-  /* Header */
-  .game-header {
+  .gameHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
   }
   
-  .game-header h1 {
+  .gameHeader h1 {
     font-size: 70px;
     margin: 0;
     color: #ff6f61;
@@ -35,13 +23,12 @@ body {
     text-shadow: 2px 2px #fff;
   }
   
-  /* Score display */
   .scores {
     display: flex;
     gap: 10px;
   }
   
-  .score-box {
+  .scoreBox {
     background: #6a67ce;
     color: #fff;
     padding: 10px 15px;
@@ -50,29 +37,28 @@ body {
     font-weight: bold;
   }
   
-  .score-box div:first-child {
+  .scoreBox div:first-child {
     font-size: 12px;
   }
   
-  .score-box div:last-child {
+  .scoreBox div:last-child {
     font-size: 20px;
   }
   
-  /* Info and button */
-  .game-info {
+  .gameInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
   }
   
-  .game-info p {
+  .gameInfo p {
     color: #333;
     margin: 0;
     font-weight: bold;
   }
   
-  .game-info button {
+  .gameInfo button {
     background: #00bcd4;
     color: white;
     border: none;
@@ -83,28 +69,27 @@ body {
     transition: background 0.3s;
   }
   
-  .game-info button:hover {
+  .gameInfo button:hover {
     background: #0097a7;
   }
   
-  /* Grid */
-  .grid-container {
+  .gridContainer {
     background: #333;
     border-radius: 15px;
     padding: 15px;
     position: relative;
   }
   
-  .grid-row {
+  .gridRow {
     display: flex;
     margin-bottom: 15px;
   }
   
-  .grid-row:last-child {
+  .gridRow:last-child {
     margin-bottom: 0;
   }
   
-  .grid-cell {
+  .gridCell {
     width: 100px;
     height: 100px;
     margin-right: 15px;
@@ -119,12 +104,11 @@ body {
     transition: all 0.2s ease-in-out;
   }
   
-  .grid-cell:last-child {
+  .gridCell:last-child {
     margin-right: 0;
   }
   
-  /* Game overlays */
-  .game-overlay {
+  .gameOverlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -139,13 +123,8 @@ body {
     animation: fadeIn 0.3s ease-in-out;
   }
   
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  .game-over-message,
-  .game-won-message {
+  .gameOverMessage,
+  .gameWonMessage {
     background: #ff6f61;
     color: white;
     padding: 25px;
@@ -154,20 +133,20 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
   
-  .game-over-message p,
-  .game-won-message p {
+  .gameOverMessage p,
+  .gameWonMessage p {
     font-size: 48px;
     margin: 0 0 20px 0;
   }
   
-  .won-buttons {
+  .wonButtons {
     display: flex;
     gap: 10px;
     justify-content: center;
   }
   
-  .won-buttons button,
-  .game-over-message button {
+  .wonButtons button,
+  .gameOverMessage button {
     background: #4caf50;
     color: white;
     border: none;
@@ -178,29 +157,29 @@ body {
     font-size: 16px;
   }
   
-  .won-buttons button:hover,
-  .game-over-message button:hover {
+  .wonButtons button:hover,
+  .gameOverMessage button:hover {
     background: #388e3c;
   }
   
   /* Responsive */
   @media (max-width: 600px) {
-    .game-header h1 {
+    .gameHeader h1 {
       font-size: 50px;
     }
   
-    .grid-cell {
+    .gridCell {
       width: 70px;
       height: 70px;
       font-size: 28px;
     }
   
-    .game-over-message p,
-    .game-won-message p {
+    .gameOverMessage p,
+    .gameWonMessage p {
       font-size: 30px;
     }
   
-    .won-buttons {
+    .wonButtons {
       flex-direction: column;
     }
   }
