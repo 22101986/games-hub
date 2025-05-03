@@ -1,0 +1,159 @@
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #2d3436;
+  }
+  
+  .gameArea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .gridContainer {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .grid {
+    border-collapse: collapse;
+  }
+  
+  .cell {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: white;
+  }
+  
+  .cell:hover {
+    background: #e9f7fe !important;
+  }
+  
+  .cell.selected {
+    background: #74b9ff;
+    color: white;
+  }
+  
+  .cell.found {
+    background: #55efc4;
+    color: white;
+  }
+  
+  .wordList {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .words {
+    color: #2d3436;
+    margin-top: 0;
+  }
+  
+  .wordList ul {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    column-gap: 20px;
+  }
+  
+  .wordList li {
+    padding: 5px 0;
+    font-size: 16px;
+  }
+  
+  .wordList li.found {
+    text-decoration: line-through;
+    color: #636e72;
+  }
+  
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .controlGroup {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .controls button, .controls select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .controls button {
+    background: #00b894;
+    color: white;
+    border: none;
+    transition: background 0.3s;
+  }
+  
+  .controls button:hover {
+    background: #00a884;
+  }
+  
+  .themeSelector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  .themeSelector select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 18px;
+    margin: 50px 0;
+    color: #636e72;
+  }
+  
+  .gameStatus {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #2d3436;
+  }
+  
+  @media (max-width: 768px) {
+    .gameArea {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .wordList ul {
+      columns: 1;
+    }
+  }
