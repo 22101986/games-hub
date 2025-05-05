@@ -11,3 +11,17 @@
     display: flex;
     justify-content: center;
   }
+
+  /* styles/globals.css */
+:root {
+  --sp-yellow: #ffa600;
+  --sp-blue: #00bfff;
+  --sp-red: #ff4444;
+  --sp-green: #44ff44;
+  --dark-bg: #1e1e1e;
+  --card-radius: 12px;
+  
+}
+
+/* Import des polices */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Luckiest+Guy&display=swap');

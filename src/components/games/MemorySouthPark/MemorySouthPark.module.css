@@ -1,0 +1,222 @@
+
+.app {
+  min-height: 100vh;
+  font-family: 'Luckiest Guy', cursive;
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.4) 0%, rgba(34, 34, 34, 0.4) 100%);
+  color: var(--sp-yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.police {
+  font-family: 'Bungee Spice', cursive;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Level Selector */
+.levelSelector {
+  margin: 20px;  
+  text-align: center;
+}
+
+.levelsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.levelCard {
+  margin: 20px;  
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--sp-blue), var(--sp-green));
+  color: #000;
+  border-radius: var(--card-radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px var(--sp-yellow);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  font-size: 1.4rem;
+  min-width: 180px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.levelCard:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--sp-red);
+}
+
+/* Game Board */
+.gameBoard {
+  width: 100%;
+}
+
+.gameHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cardsGrid {
+  display: grid;
+  gap: 12px;
+  margin: 50px;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  width: 90px;
+  height: 90px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront, .cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--card-radius);
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 5px #000;
+}
+
+.cardFront {
+  background-color: var(--sp-yellow);
+  color: #000;
+}
+
+.cardBack {
+  background-color: var(--sp-red);
+  transform: rotateY(180deg);
+}
+
+/* Modal */
+.welcomeModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.welcomeModal {
+  background-color: var(--sp-blue);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  color: black;
+  font-size: 1.2rem;
+  box-shadow: 0 0 15px var(--sp-yellow);
+}
+
+/* Buttons */
+.btnDanger {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  background-color: #ff5555;
+  color: white;
+  cursor: pointer;
+}
+
+.btnDanger:hover {
+  background-color: #ff3333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(255, 85, 85, 0.4);
+}
+
+.btnPrimary {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  background-color: #00ccff;
+  color: black;
+  cursor: pointer;
+}
+
+.btnPrimary:hover {
+  background-color: #00b5e2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 204, 255, 0.4);
+}
+
+/* Alert */
+.alertSuccess {
+  background-color: #a0ff9f;
+  border: 2px solid #4caf50;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 70px;
+    height: 100px;
+  }
+
+  .levelsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
