@@ -1,24 +1,15 @@
 import React from 'react';
 import styles from './MotsMeles.module.css';
 
-const Controls = ({ gridSize, setGridSize, difficulty, setDifficulty, onNewGame }) => {
+const Controls = ({ difficulty, setDifficulty, onNewGame }) => {
   return (
-    <div className={styles.controls}>
-      <div className={styles.controlGroup}>
-        <label>Taille de la grille:</label>
-        <select value={gridSize} onChange={(e) => setGridSize(parseInt(e.target.value))}>
-          <option value="12">12x12</option>
-          <option value="15">15x15</option>
-          <option value="20">20x20</option>
-        </select>
-      </div>
-      
+    <div className={styles.controls}>      
       <div className={styles.controlGroup}>
         <label>Difficulté:</label>
         <select value={difficulty} onChange={(e) => setDifficulty(e.target.value)}>
-          <option value="easy">Facile</option>
-          <option value="medium">Moyen</option>
-          <option value="hard">Difficile</option>
+          <option value="easy">Facile (12x12)</option>
+          <option value="medium">Moyen (15x15)</option>
+          <option value="hard">Difficile (20x20)</option>
         </select>
       </div>
       

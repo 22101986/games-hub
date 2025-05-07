@@ -29,14 +29,13 @@ export default function MotsMelesGame() {
   const [theme, setTheme] = useState('maison');
 
   const difficultySettings = {
-    easy: { wordCount: 12, minLength: 4, maxLength: 6 },
-    medium: { wordCount: 18, minLength: 5, maxLength: 8 },
-    hard: { wordCount: 24, minLength: 6, maxLength: 10 },
-    expert: { wordCount: 30, minLength: 7, maxLength: 12 }
+    easy: { wordCount: 12, minLength: 4, maxLength: 6, gridSize: 12 },
+    medium: { wordCount: 18, minLength: 5, maxLength: 8, gridSize: 15 },
+    hard: { wordCount: 24, minLength: 6, maxLength: 10, gridSize: 20 }
   };
 
   const generateGrid = (wordList) => {
-    const size = gridSize;
+    const size = difficultySettings[difficulty].gridSize;
     const newGrid = Array(size).fill().map(() => Array(size).fill(''));
     const positions = {};
     const frenchLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -183,7 +182,7 @@ export default function MotsMelesGame() {
 
   useEffect(() => {
     startNewGame();
-  }, [difficulty, gridSize, theme]);
+  }, [difficulty, theme]);
 
   return (
     <div className={styles.app}>
@@ -191,8 +190,6 @@ export default function MotsMelesGame() {
       <h2 className='title'>Thème: {theme.toUpperCase()}</h2>
       
       <Controls 
-        gridSize={gridSize}
-        setGridSize={setGridSize}
         difficulty={difficulty}
         setDifficulty={setDifficulty}
         onNewGame={startNewGame}
