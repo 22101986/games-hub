@@ -46,6 +46,13 @@ export default function Home() {
               bgColor="#44ff44"
               emoji="🧠"
             />
+            <GameCard 
+              title="Pierre Feuille Ciseaux" 
+              description="Le jeu classique de stratégie"
+              href="/games/pierre-feuille-ciseaux"
+              bgColor="#5d9cec"
+              emoji="✊ ✋ ✌️"
+            />
         </div>
         </div>
     </div>
