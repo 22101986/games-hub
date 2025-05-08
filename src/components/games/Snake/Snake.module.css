@@ -1,0 +1,192 @@
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2c2c3c);
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+  }
+  
+  .gameInfo {
+    margin: 20px 0;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 18px;
+    background-color: #222;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000066;
+  }
+  
+  .gameBoard {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border: 3px solid #00bcd4;
+    background: repeating-linear-gradient(
+      45deg,
+      #1a1a2e,
+      #1a1a2e 20px,
+      #16213e 20px,
+      #16213e 40px
+    );
+    box-shadow: 0 0 20px #00bcd4aa;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .snakeSegment {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #00e676;
+    border-radius: 4px;
+    transition: transform 0.1s ease;
+    box-shadow: 0 0 5px #00e676aa;
+  }
+  
+  .snakeHead {
+    background: #00c853;
+    box-shadow: 0 0 10px #00c853;
+  }
+  
+  .food {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #ff1744;
+    border-radius: 50%;
+    border: 2px solid #ff5252;
+    box-shadow: 0 0 10px #ff1744aa;
+    animation: pulse 0.8s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+  
+  .gameOver, .pauseScreen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(10, 10, 10, 0.85);
+    color: #fff;
+    font-size: 24px;
+    z-index: 10;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .button:hover {
+    background-color: #1976d2;
+    transform: scale(1.05);
+  }
+  
+  
+  /* Contrôles mobiles */
+  .mobileControls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .dPad {
+    position: relative;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .dPadButton {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(33, 150, 243, 0.7);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .dPadButton:active {
+    background-color: rgba(25, 118, 210, 0.9);
+    transform: scale(0.95);
+  }
+  
+  .up {
+    top: 0;
+    left: 50px;
+  }
+  
+  .down {
+    bottom: 0;
+    left: 50px;
+  }
+  
+  .left {
+    top: 50px;
+    left: 0;
+  }
+  
+  .right {
+    top: 50px;
+    right: 0;
+  }
+  
+  .dPadCenter {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(33, 150, 243, 0.5);
+    border-radius: 8px;
+    top: 50px;
+    left: 50px;
+  }
+  
+  @media (max-width: 500px) {
+    .gameBoard {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .snakeSegment, .food {
+      width: 15px;
+      height: 15px;
+    }
+  }

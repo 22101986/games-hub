@@ -53,6 +53,13 @@ export default function Home() {
               bgColor="#5d9cec"
               emoji="✊ ✋ ✌️"
             />
+            <GameCard 
+              title="Snake" 
+              description="Contrôlez le serpent et mangez sans vous mordre"
+              href="/games/snake"
+              bgColor="#1abc9c"
+              emoji="🐍"
+            />
         </div>
         </div>
     </div>
