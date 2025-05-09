@@ -1,0 +1,222 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+.container {
+  --primary: #8e44ad;
+  --secondary: #1abc9c;
+  --highlight: #f1c40f;
+  --bg-light: #d9bff3;
+  --bg-dark: #2c3e50;
+  --white: #ffffff;
+  --black: #111111;
+
+  margin: 0;
+  background: var(--bg-light);
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  text-align: center;
+  padding-top: 30px;
+}
+
+/* Game Sections */
+.gameSetup, .gameOver {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+}
+
+/* Buttons */
+.button {
+  padding: 12px 25px;
+  font-size: 16px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+}
+
+.button:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.buttonActive {
+  background: var(--highlight);
+  color: var(--black);
+  font-weight: 800;
+  box-shadow: 0 0 10px var(--highlight);
+}
+
+/* Options */
+.gameOptions, .difficultyOptions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Game Info */
+.gameInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 30px 0;
+}
+
+.status {
+  font-size: 22px;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.statusWhite {
+  background: #ffffffdd;
+  color: var(--black);
+  border: 2px solid var(--black);
+}
+
+.statusBlack {
+  background: #000000cc;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+/* Board & Squares */
+.board {
+  display: inline-block;
+  border: 4px solid var(--primary);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+.row {
+  display: flex;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.squareDark {
+  background-color: var(--secondary);
+}
+
+.squareLight {
+  background-color: #ecf0f1;
+}
+
+.squareSelected {
+  background-color: var(--highlight);
+}
+
+.squareValidMove::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: rgba(241, 196, 15, 0.7);
+  border-radius: 50%;
+}
+
+/* Pieces */
+.piece {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.pieceWhite {
+  background: radial-gradient(circle, #ffffff, #dfe6e9);
+  border: 2px solid #bdc3c7;
+}
+
+.pieceBlack {
+  background: radial-gradient(circle, #2d3436, #000000);
+  border: 2px solid #2c3e50;
+}
+
+.pieceKing {
+  border: 3px solid var(--highlight);
+  transform: scale(1.1);
+}
+
+.kingMarker {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--highlight);
+  text-shadow: 0 0 3px #000;
+}
+
+/* Game Over */
+.gameOver h2 {
+  color: var(--primary);
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.gameOver p {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .square {
+    width: 42px;
+    height: 42px;
+  }
+
+  .piece {
+    width: 35px;
+    height: 35px;
+  }
+
+  .kingMarker {
+    font-size: 12px;
+  }
+
+  .gameOptions, .difficultyOptions, .gameInfo {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

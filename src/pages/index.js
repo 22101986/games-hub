@@ -10,7 +10,7 @@ export default function Home() {
       }}>
         <div className={styles.hubContainer}>
         <h1 className={styles.title}>MyGamesHub</h1>
-        <div className={styles.gamesGrid}>
+          <div className={styles.gamesGrid}>
             <GameCard 
               title="Morpion" 
               description="Le classique jeu de X et O"
@@ -60,7 +60,14 @@ export default function Home() {
               bgColor="#1abc9c"
               emoji="🐍"
             />
-        </div>
+            <GameCard 
+              title="Dames" 
+              description="Affrontez l'adversaire dans ce jeu de stratégie classique"
+              href="/games/dames"
+              bgColor="#8b0055"
+              emoji="⚪⚫"
+            />
+          </div>
         </div>
     </div>
   );
