@@ -93,7 +93,7 @@ export default function PenduGame() {
 
   return (
     <div className={styles.hangmanGame}>
-      <h1>Jeu du Pendu</h1>
+      <h1>PenduNext</h1>
 
       {renderHangman()}
       {renderWord()}
