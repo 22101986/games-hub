@@ -1,0 +1,260 @@
+.hangmanGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .hangmanGame h1 {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 0 var(--secondary);
+  }
+  
+  .hangmanDrawing {
+    position: relative;
+    width: 100px;
+    height: 130px;
+    margin-bottom: 2rem;
+  }
+  
+  /* Potence : Ne pas modifier */
+  .standTop,
+  .standVertical,
+  .supportDiagonal,
+  .standBase {
+    background-color: #6b4f1d;
+    border-radius: 3px;
+  }
+  
+  .standTop {
+    width: 70px;
+    height: 8px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+  
+  .standVertical {
+    width: 8px;
+    height: 130px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+  
+  .supportDiagonal {
+    width: 45px;
+    height: 8px;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    transform: rotate(120deg);
+    transform-origin: top left;
+  }
+  
+  .standBase {
+    width: 70px;
+    height: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+  }
+  
+  /* Amélioration du pendu */
+  .rope {
+    width: 4px;
+    height: 20px;
+    background-color: #333;
+    position: absolute;
+    top: 10px;
+    left: 75px;
+  }
+  
+  .head {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ffeb3b, #fbc02d);
+    border: 2px solid #444;
+    position: absolute;
+    top: 25px;
+    left: 65px;
+  }
+  
+  .body {
+    width: 4px;
+    height: 32px;
+    background: linear-gradient(to bottom, #f06292, #ec407a);
+    border-radius: 2px;
+    position: absolute;
+    top: 45px;
+    left: 75px;
+  }
+  
+  .leftArm,
+  .rightArm,
+  .leftLeg,
+  .rightLeg {
+    background: #ba68c8;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+  }
+  
+  .leftArm {
+    width: 20px;
+    top: 52px;
+    left: 55px;
+    transform: rotate(25deg);
+    transform-origin: top right;
+  }
+  
+  .rightArm {
+    width: 20px;
+    top: 52px;
+    left: 75px;
+    transform: rotate(-25deg);
+    transform-origin: top left;
+  }
+  
+  .leftLeg {
+    width: 20px;
+    top: 78px;
+    left: 60px;
+    transform: rotate(-20deg);
+    transform-origin: top right;
+  }
+  
+  .rightLeg {
+    width: 20px;
+    top: 78px;
+    left: 75px;
+    transform: rotate(20deg);
+    transform-origin: top left;
+  }
+  
+  .wordDisplay {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.15em;
+    color: var(--text);
+  }
+  
+  .letter {
+    display: inline-block;
+    margin: 0 0.3em;
+    min-width: 1em;
+    text-align: center;
+    border-bottom: 3px solid var(--muted);
+  }
+  
+  .alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4em;
+    margin-bottom: 1.5rem;
+  }
+  
+  .letterBtn {
+    padding: 0.6em 1em;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--primary);
+    color: var(--light);
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .letterBtn:hover {
+    transform: scale(1.05);
+    background-color: var(--secondary);
+  }
+  
+  .letterBtn:disabled {
+    background-color: var(--muted);
+    color: #fff;
+    cursor: not-allowed;
+  }
+  
+  .correct {
+    background-color: #34d399 !important;
+    color: #065f46 !important;
+  }
+  
+  .incorrect {
+    background-color: #f87171 !important;
+    color: #991b1b !important;
+  }
+  
+  .status {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--primary);
+  }
+  
+  .message {
+    margin-top: 1rem;
+    padding: 1.2rem;
+    border-radius: 12px;
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .won {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .lost {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+  
+  .resetBtn {
+    padding: 0.8em 1.6em;
+    font-size: 1.1em;
+    background-color: var(--secondary);
+    color: var(--light);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .resetBtn:hover {
+    background-color: #be185d;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hangmanDrawing {
+      transform: scale(0.9);
+    }
+  
+    .letterBtn {
+      font-size: 0.9em;
+      padding: 0.4em 0.6em;
+    }
+  
+    .wordDisplay {
+      font-size: 1.6rem;
+    }
+  
+    .hangmanGame h1 {
+      font-size: 2.2rem;
+    }
+  }
+  

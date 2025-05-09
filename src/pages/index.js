@@ -67,6 +67,13 @@ export default function Home() {
               bgColor="#8b0055"
               emoji="⚪⚫"
             />
+            <GameCard 
+              title="PenduNext" 
+              description="Trouvez le mot avant que le pendu soit complet"
+              href="/games/pendu"
+              bgColor="#7aB555"
+              emoji="🔤"
+            />
           </div>
         </div>
     </div>
